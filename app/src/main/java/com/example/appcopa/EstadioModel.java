@@ -1,4 +1,4 @@
-package com.exemplo.appcopa; // Substitua pelo package real do seu projeto
+package com.example.appcopa; // Substitua pelo package real do seu projeto
 
 import android.content.Context;
 import android.database.Cursor;
