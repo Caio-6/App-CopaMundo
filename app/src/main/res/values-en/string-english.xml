@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string lingua="Portugês"></string>
+    <string name="direitos">"All rights reserved"</string>
 </resources>
