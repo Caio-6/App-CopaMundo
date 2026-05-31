@@ -1,6 +1,6 @@
 package com.example.appcopa; // Substitua pelo package real do seu projeto
 
-public class EstadiosPojo {
+public class EstadioPojo {
 
     // Atributos privados correspondentes às colunas do banco de dados
     private int id;
@@ -14,12 +14,12 @@ public class EstadiosPojo {
     private String linkMaps;
 
     // Construtor Vazio (Necessário para instanciação genérica e boas práticas)
-    public EstadiosPojo() {
+    public EstadioPojo() {
     }
 
     // Construtor Completo
-    public EstadiosPojo(int id, int codigoEstadioEnum, String nome, String local, String descricao,
-                        int capacidade, String dataFundacao, byte[] imagem, String linkMaps) {
+    public EstadioPojo(int id, int codigoEstadioEnum, String nome, String local, String descricao,
+                       int capacidade, String dataFundacao, byte[] imagem, String linkMaps) {
         this.id = id;
         this.codigoEstadioEnum = codigoEstadioEnum;
         this.nome = nome;
