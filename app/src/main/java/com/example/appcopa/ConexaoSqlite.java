@@ -27,6 +27,13 @@ public class ConexaoSqlite extends SQLiteOpenHelper {
         super(context, NOME_BANCO, null, VERSAO_BANCO);
     }
 
+    //Configuração pra foreign key
+    @Override
+    public void onConfigure(SQLiteDatabase db)
+    {
+        super.onConfigure(db);
+        db.setForeignKeyConstraintsEnabled(true);
+    }
     // Método chamado na primeira vez que o banco de dados é criado
     @Override
     public void onCreate(SQLiteDatabase db) {
