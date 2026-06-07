@@ -52,7 +52,7 @@ public class LinguaDML {
      * DML: SELECT - Procura e retorna o nome da língua que está ativa (escolha = 1)
      */
     public String buscarLinguaAtiva() {
-        String idiomaAtivo = "pt"; // Idioma de segurança caso o banco esteja vazio
+        String idiomaAtivo = "en"; // Idioma de segurança caso o banco esteja vazio
         SQLiteDatabase db = conexao.getReadableDatabase();
         Cursor cursor = null;
 
