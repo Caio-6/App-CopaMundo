@@ -46,6 +46,7 @@ public class ConexaoSqlite extends SQLiteOpenHelper {
         // Executa o script SQL de criação
         db.execSQL(scriptCriacaoTabela);
         db.execSQL(LinguaDDL.SCRIPT_CRIACAO);
+        db.execSQL(ConfiguracaoDDL.SCRIPT_CRIACAO);
     }
 
     // Método chamado quando você altera a VERSAO_BANCO (útil para atualizações futuras)
@@ -54,6 +55,7 @@ public class ConexaoSqlite extends SQLiteOpenHelper {
         // Por enquanto, deleta a tabela antiga e recria uma nova
         db.execSQL("DROP TABLE IF EXISTS " + TABELA_ESTADIOS);
         db.execSQL(LinguaDDL.SCRIPT_DELETAR);
+        db.execSQL(ConfiguracaoDDL.SCRIPT_DELETAR);
         onCreate(db);
     }
 }
