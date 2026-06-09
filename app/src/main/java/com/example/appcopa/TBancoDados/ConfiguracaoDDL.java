@@ -1,4 +1,4 @@
-package com.example.appcopa;
+package com.example.appcopa.TBancoDados;
 
 public class ConfiguracaoDDL {
     // Nome da tabela e das colunas

@@ -1,9 +1,11 @@
-package com.example.appcopa; // Substitua pelo package real do seu projeto
+package com.example.appcopa.TBancoDados; // Substitua pelo package real do seu projeto
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.example.appcopa.ConexaoSqlite;
 
 public class ConfiguracaoModel {
 

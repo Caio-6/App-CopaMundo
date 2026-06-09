@@ -4,6 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.appcopa.TBancoDados.ConfiguracaoDDL;
+import com.example.appcopa.TBancoDados.LinguaDDL;
+
 public class ConexaoSqlite extends SQLiteOpenHelper {
 
     // Configurações do Banco de Dados

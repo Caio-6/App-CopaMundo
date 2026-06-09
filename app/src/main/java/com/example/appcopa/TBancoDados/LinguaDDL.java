@@ -1,4 +1,4 @@
-package com.example.appcopa; // Substitua pelo package real do seu projeto
+package com.example.appcopa.TBancoDados; // Substitua pelo package real do seu projeto
 
 public class LinguaDDL {
     // Nome da tabela e das colunas como constantes para evitar erros de digitação
