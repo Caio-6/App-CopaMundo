@@ -1,4 +1,4 @@
-package com.example.appcopa.TBancoDados; // Substitua pelo package real do seu projeto
+package com.example.appcopa.TBancoDados; 
 
 public class SelecaoDDL {
     // Nome da tabela e das colunas

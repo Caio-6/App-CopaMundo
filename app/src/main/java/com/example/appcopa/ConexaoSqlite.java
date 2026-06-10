@@ -1,13 +1,13 @@
-package com.example.appcopa; // Substitua pelo package real do seu projeto
+package com.example.appcopa;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.appcopa.TBancoDados.ConfiguracaoDDL;
+import com.example.appcopa.TBancoDados.GrupoDDL;
 import com.example.appcopa.TBancoDados.LinguaDDL;
 import com.example.appcopa.TBancoDados.SelecaoDDL;
-import com.example.appcopa.TBancoDados.SelecaoDML;
 
 public class ConexaoSqlite extends SQLiteOpenHelper {
 
@@ -60,6 +60,7 @@ public class ConexaoSqlite extends SQLiteOpenHelper {
         db.execSQL(LinguaDDL.SCRIPT_CRIACAO);
         db.execSQL(ConfiguracaoDDL.SCRIPT_CRIACAO);
         db.execSQL(SelecaoDDL.SCRIPT_CRIACAO);
+        db.execSQL(GrupoDDL.SCRIPT_CRIACAO);
     }
 
     // Método chamado quando você altera a VERSAO_BANCO (útil para atualizações futuras)
@@ -69,6 +70,7 @@ public class ConexaoSqlite extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABELA_ESTADIOS);
         db.execSQL(LinguaDDL.SCRIPT_DELETAR);
         db.execSQL(ConfiguracaoDDL.SCRIPT_DELETAR);
+        db.execSQL(SelecaoDDL.SCRIPT_DELETAR);
         db.execSQL(SelecaoDDL.SCRIPT_DELETAR);
         onCreate(db);
     }
