@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.appcopa.TBancoDados.ConfiguracaoDDL;
 import com.example.appcopa.TBancoDados.GrupoDDL;
+import com.example.appcopa.TBancoDados.GrupoSelecaoDDL;
 import com.example.appcopa.TBancoDados.LinguaDDL;
 import com.example.appcopa.TBancoDados.SelecaoDDL;
 
@@ -61,6 +62,7 @@ public class ConexaoSqlite extends SQLiteOpenHelper {
         db.execSQL(ConfiguracaoDDL.SCRIPT_CRIACAO);
         db.execSQL(SelecaoDDL.SCRIPT_CRIACAO);
         db.execSQL(GrupoDDL.SCRIPT_CRIACAO);
+        db.execSQL(GrupoSelecaoDDL.SCRIPT_CRIACAO);
     }
 
     // Método chamado quando você altera a VERSAO_BANCO (útil para atualizações futuras)
@@ -71,7 +73,8 @@ public class ConexaoSqlite extends SQLiteOpenHelper {
         db.execSQL(LinguaDDL.SCRIPT_DELETAR);
         db.execSQL(ConfiguracaoDDL.SCRIPT_DELETAR);
         db.execSQL(SelecaoDDL.SCRIPT_DELETAR);
-        db.execSQL(SelecaoDDL.SCRIPT_DELETAR);
+        db.execSQL(GrupoDDL.SCRIPT_DELETAR);
+        db.execSQL(GrupoSelecaoDDL.SCRIPT_DELETAR);
         onCreate(db);
     }
 }
