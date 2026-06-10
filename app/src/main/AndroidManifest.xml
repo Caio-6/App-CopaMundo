@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APPCOPA">
         <activity
+            android:name=".ActivityPartida"
+            android:exported="false" />
+        <activity
             android:name=".GrupoSelecao"
             android:exported="false" />
         <activity
