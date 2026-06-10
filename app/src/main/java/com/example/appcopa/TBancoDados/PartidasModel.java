@@ -9,7 +9,7 @@ import com.example.appcopa.ConexaoSqlite;
 
 public class PartidasModel {
 
-    private ConexaoSqlite conexao;
+    private final ConexaoSqlite conexao;
 
     public PartidasModel(Context context) {
         this.conexao = new ConexaoSqlite(context);
