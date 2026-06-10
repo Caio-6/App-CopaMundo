@@ -15,14 +15,25 @@ public class GrupoSelecaoDML {
     }
 
     /**
-     * DML: INSERT - Associa um ID de grupo a um ID de seleção
+     * DML: INSERT - Insere uma linha completa de estatísticas baseada no JSON de testes
      */
-    public boolean associarGrupoSelecao(int idGrupo, int idSelecao) {
+    public boolean inserirDoJson(int idGrupo, String codigoSelecao, int pontos, int jogos,
+                                 int vitorias, int empates, int derrotas,
+                                 int golsPro, int golsContra, int saldoGols) {
+
         SQLiteDatabase db = conexao.getWritableDatabase();
         ContentValues valores = new ContentValues();
 
         valores.put(GrupoSelecaoDDL.COL_ID_GRUPO, idGrupo);
-        valores.put(GrupoSelecaoDDL.COL_ID_SELECAO, idSelecao);
+        valores.put(GrupoSelecaoDDL.COL_CODIGO_SELECAO, codigoSelecao);
+        valores.put(GrupoSelecaoDDL.COL_PONTOS, pontos);
+        valores.put(GrupoSelecaoDDL.COL_JOGOS, jogos);
+        valores.put(GrupoSelecaoDDL.COL_VITORIAS, vitorias);
+        valores.put(GrupoSelecaoDDL.COL_EMPATES, empates);
+        valores.put(GrupoSelecaoDDL.COL_DERROTAS, derrotas);
+        valores.put(GrupoSelecaoDDL.COL_GOLS_PRO, golsPro);
+        valores.put(GrupoSelecaoDDL.COL_GOLS_CONTRA, golsContra);
+        valores.put(GrupoSelecaoDDL.COL_SALDO_GOLS, saldoGols);
 
         long resultado = db.insert(GrupoSelecaoDDL.TABELA_NOME, null, valores);
         db.close();
@@ -31,26 +42,27 @@ public class GrupoSelecaoDML {
     }
 
     /**
-     * DML: DELETE - Remove a associação específica entre o grupo e a seleção
+     * DML: SELECT - Busca a tabela de classificação de um grupo ordenando por pontos decrescente
+     * (Ideal para montar a tela de classificação da Copa do Mundo)
      */
-    public boolean removerAssociacao(int id) {
-        SQLiteDatabase db = conexao.getWritableDatabase();
+    public Cursor buscarClassificacaoDoGrupo(int idGrupo) {
+        SQLiteDatabase db = conexao.getReadableDatabase();
 
-        String condicaoWhere = GrupoSelecaoDDL.COL_ID + " = ?";
-        String[] argumentosWhere = { String.valueOf(id) };
+        // Query que busca o grupo filtrado e joga os líderes (mais pontos e melhor saldo) para cima
+        String query = "SELECT * FROM " + GrupoSelecaoDDL.TABELA_NOME
+                + " WHERE " + GrupoSelecaoDDL.COL_ID_GRUPO + " = ?"
+                + " ORDER BY " + GrupoSelecaoDDL.COL_PONTOS + " DESC, "
+                + GrupoSelecaoDDL.COL_SALDO_GOLS + " DESC";
 
-        int linhasEliminadas = db.delete(GrupoSelecaoDDL.TABELA_NOME, condicaoWhere, argumentosWhere);
-        db.close();
-
-        return linhasEliminadas > 0;
+        return db.rawQuery(query, new String[]{String.valueOf(idGrupo)});
     }
 
     /**
-     * DML: SELECT - Busca todos os cruzamentos da tabela
+     * DML: DELETE - Limpa os dados de teste da tabela se necessário
      */
-    public Cursor buscarTodosRelacionamentos() {
-        SQLiteDatabase db = conexao.getReadableDatabase();
-        String query = "SELECT * FROM " + GrupoSelecaoDDL.TABELA_NOME;
-        return db.rawQuery(query, null);
+    public void limparTabela() {
+        SQLiteDatabase db = conexao.getWritableDatabase();
+        db.delete(GrupoSelecaoDDL.TABELA_NOME, null, null);
+        db.close();
     }
 }
