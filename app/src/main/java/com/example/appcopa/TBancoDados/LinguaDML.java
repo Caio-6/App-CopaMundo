@@ -19,12 +19,13 @@ public class LinguaDML {
     /**
      * DML: INSERT - Insere um novo idioma disponível
      */
-    public boolean inserirLingua(String nome, int escolha) {
+    public boolean inserirLingua(String nome, int escolha,String cod_lingua) {
         SQLiteDatabase db = conexao.getWritableDatabase();
         ContentValues valores = new ContentValues();
 
         valores.put(LinguaDDL.COL_NOME, nome);
         valores.put(LinguaDDL.COL_ESCOLHA, escolha);
+        valores.put(LinguaDDL.COL_COD_LINGA,cod_lingua);
 
         long resultado = db.insert(LinguaDDL.TABELA_NOME, null, valores);
         db.close();

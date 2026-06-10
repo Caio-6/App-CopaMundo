@@ -7,11 +7,14 @@ public class LinguaDDL {
     public static final String COL_NOME = "nome";
     public static final String COL_ESCOLHA = "escolha";
 
+    public static final String COL_COD_LINGA="cod_lingua";
+
     // O script DDL puro formatado para o SQLite do Android
     public static final String SCRIPT_CRIACAO = "CREATE TABLE IF NOT EXISTS " + TABELA_NOME + " ("
             + COL_ID + " INTEGER NOT NULL UNIQUE, "
             + COL_NOME + " TEXT NOT NULL UNIQUE, "
             + COL_ESCOLHA + " INTEGER, "
+            + COL_COD_LINGA + "TEXT NOT NULL,"
             + "PRIMARY KEY(" + COL_ID + " AUTOINCREMENT)"
             + ");";
 
