@@ -18,13 +18,13 @@ public class ConfiguracaoDML {
     /**
      * DML: INSERT - Cria a linha inicial de configurações do aplicativo
      */
-    public boolean criarConfiguracaoInicial(int idLinguaPadrao, String copaPadrao) {
+    public boolean criarConfiguracaoInicial(String codLinguaPadrao, String copaPadrao) {
         SQLiteDatabase db = conexao.getWritableDatabase();
         ContentValues valores = new ContentValues();
 
         // Forçamos o ID 1 para garantir que só existirá uma linha de configuração global
         valores.put(ConfiguracaoDDL.COL_ID, 1);
-        valores.put(ConfiguracaoDDL.COL_LINGUAS_ATIVA, idLinguaPadrao);
+        valores.put(ConfiguracaoDDL.COL_LINGUAS_ATIVA, codLinguaPadrao);
         valores.put(ConfiguracaoDDL.COL_NOTIFICACOES_ATIVAS, 1); // 1 = Ativadas por padrão
         valores.put(ConfiguracaoDDL.COL_MODO_NOTURNO, 0);        // 0 = Modo claro por padrão
         valores.put(ConfiguracaoDDL.COL_ULTIMA_ATUALIZACAO, "");
@@ -39,11 +39,11 @@ public class ConfiguracaoDML {
     /**
      * DML: UPDATE - Atualiza o idioma ativo nas configurações globais
      */
-    public boolean atualizarIdioma(int idNovaLingua) {
+    public boolean atualizarIdioma(String codNovaLingua) {
         SQLiteDatabase db = conexao.getWritableDatabase();
         ContentValues valores = new ContentValues();
 
-        valores.put(ConfiguracaoDDL.COL_LINGUAS_ATIVA, idNovaLingua);
+        valores.put(ConfiguracaoDDL.COL_LINGUAS_ATIVA, codNovaLingua);
 
         // Atualiza apenas a linha de configuração mestre (ID = 1)
         int linhasAfetadas = db.update(

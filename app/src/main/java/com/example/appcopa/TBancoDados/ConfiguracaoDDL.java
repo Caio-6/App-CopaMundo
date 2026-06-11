@@ -13,13 +13,13 @@ public class ConfiguracaoDDL {
     // Script DDL para criação da tabela respeitando a chave estrangeira
     public static final String SCRIPT_CRIACAO = "CREATE TABLE IF NOT EXISTS " + TABELA_NOME + " ("
             + COL_ID + " INTEGER NOT NULL UNIQUE, "
-            + COL_LINGUAS_ATIVA + " INTEGER NOT NULL UNIQUE, "
+            + COL_LINGUAS_ATIVA + " TEXT NOT NULL UNIQUE, "
             + COL_NOTIFICACOES_ATIVAS + " INTEGER, "
             + COL_MODO_NOTURNO + " INTEGER, "
             + COL_ULTIMA_ATUALIZACAO + " TEXT, "
             + COL_COPA_ATIVA + " TEXT, "
             + "PRIMARY KEY(" + COL_ID + " AUTOINCREMENT), "
-            + "FOREIGN KEY(" + COL_LINGUAS_ATIVA + ") REFERENCES Linguas(id)"
+            + "FOREIGN KEY(" + COL_LINGUAS_ATIVA + ") REFERENCES Linguas(cod_lingua)"
             + ");";
 
     public static final String SCRIPT_DELETAR = "DROP TABLE IF EXISTS " + TABELA_NOME;

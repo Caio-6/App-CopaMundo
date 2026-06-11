@@ -6,13 +6,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.appcopa.ConexaoSqlite;
+import com.example.appcopa.TBancoDados.LinguaDML;
 
 public class ConfiguracaoModel {
 
-    private ConexaoSqlite conexao;
-
+    private final ConexaoSqlite conexao;
+    private ConfiguracaoDML config;
     public ConfiguracaoModel(Context context) {
         this.conexao = new ConexaoSqlite(context);
+        this.config=new ConfiguracaoDML(context);
     }
 
     /**
@@ -91,5 +93,17 @@ public class ConfiguracaoModel {
         config.setCopaAtiva(cursor.getString(idxCopa));
 
         return config;
+    }
+
+    public void SalvarLingua(String codIdioma){
+        buscarConfiguracao();
+        if(buscarConfiguracao()==null)
+        {
+            config.criarConfiguracaoInicial(codIdioma,"2026");
+        }
+        else
+        {
+            config.atualizarIdioma(codIdioma);
+        }
     }
 }
