@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,10 +28,17 @@ public class SelectLanguage extends AppCompatActivity {
         btnPortugues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String codIdioma="pt";
-                banco_dados.SalvarLingua(codIdioma);
+                String codLingua="pt";
+                processLingua(codLingua);
                 startActivity(intent);
+                finish();
             }
         });
+    }
+
+    public void processLingua(String codLingua)
+    {
+        banco_dados.SalvarLingua(codLingua);
+        Toast.makeText(this,"Lingua salva no banco!",Toast.LENGTH_SHORT).show();
     }
 }
