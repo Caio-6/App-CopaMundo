@@ -1,4 +1,4 @@
-package com.example.appcopa.TBancoDados; 
+package com.example.appcopa.TBancoDados.database.DDL;
 
 public class LinguaDDL {
     // Nome da tabela e das colunas como constantes para evitar erros de digitação

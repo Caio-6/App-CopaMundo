@@ -4,11 +4,11 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.appcopa.TBancoDados.ConfiguracaoDDL;
-import com.example.appcopa.TBancoDados.GrupoDDL;
-import com.example.appcopa.TBancoDados.GrupoSelecaoDDL;
-import com.example.appcopa.TBancoDados.LinguaDDL;
-import com.example.appcopa.TBancoDados.SelecaoDDL;
+import com.example.appcopa.TBancoDados.database.DDL.ConfiguracaoDDL;
+import com.example.appcopa.TBancoDados.database.DDL.GrupoDDL;
+import com.example.appcopa.TBancoDados.database.DDL.GrupoSelecaoDDL;
+import com.example.appcopa.TBancoDados.database.DDL.LinguaDDL;
+import com.example.appcopa.TBancoDados.database.DDL.SelecaoDDL;
 
 public class ConexaoSqlite extends SQLiteOpenHelper {
 

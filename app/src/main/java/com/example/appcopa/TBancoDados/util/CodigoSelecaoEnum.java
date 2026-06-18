@@ -1,4 +1,4 @@
-package com.example.appcopa.TBancoDados; // Substitua pelo package do seu projeto
+package com.example.appcopa.TBancoDados.util; // Substitua pelo package do seu projeto
 
 public enum CodigoSelecaoEnum {
 

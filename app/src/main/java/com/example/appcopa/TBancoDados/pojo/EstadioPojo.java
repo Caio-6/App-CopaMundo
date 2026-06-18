@@ -1,4 +1,4 @@
-package com.example.appcopa.TBancoDados; 
+package com.example.appcopa.TBancoDados.pojo;
 
 public class EstadioPojo {
 

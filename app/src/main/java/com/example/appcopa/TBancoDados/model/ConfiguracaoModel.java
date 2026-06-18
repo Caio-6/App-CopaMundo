@@ -1,4 +1,4 @@
-package com.example.appcopa.TBancoDados; 
+package com.example.appcopa.TBancoDados.model;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,7 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.appcopa.ConexaoSqlite;
-import com.example.appcopa.TBancoDados.LinguaDML;
+import com.example.appcopa.TBancoDados.database.DDL.ConfiguracaoDDL;
+import com.example.appcopa.TBancoDados.database.DML.ConfiguracaoDML;
+import com.example.appcopa.TBancoDados.pojo.ConfiguracaoPojo;
 
 public class ConfiguracaoModel {
 

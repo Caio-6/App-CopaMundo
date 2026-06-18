@@ -1,10 +1,11 @@
-package com.example.appcopa.TBancoDados;
+package com.example.appcopa.TBancoDados.model;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.appcopa.ConexaoSqlite;
+import com.example.appcopa.TBancoDados.pojo.EstadioPojo;
 
 import java.util.ArrayList;
 import java.util.List;

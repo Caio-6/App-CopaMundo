@@ -1,4 +1,4 @@
-package com.example.appcopa.TBancoDados; // Substitua pelo package real do seu projeto
+package com.example.appcopa.TBancoDados.model; // Substitua pelo package real do seu projeto
 
 import android.content.Context;
 import android.database.Cursor;
@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 import com.example.appcopa.ConexaoSqlite;
+import com.example.appcopa.TBancoDados.database.DDL.PartidasDDL;
+import com.example.appcopa.TBancoDados.pojo.PartidasPojo;
 
 public class PartidasModel {
 

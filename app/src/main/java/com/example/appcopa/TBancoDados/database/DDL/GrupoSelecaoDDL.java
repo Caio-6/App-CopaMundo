@@ -1,4 +1,4 @@
-package com.example.appcopa.TBancoDados; // Substitua pelo package real do seu projeto
+package com.example.appcopa.TBancoDados.database.DDL; // Substitua pelo package real do seu projeto
 
 public class GrupoSelecaoDDL {
     public static final String TABELA_NOME = "GrupoSelecao";

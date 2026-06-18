@@ -1,4 +1,4 @@
-package com.example.appcopa.TBancoDados; 
+package com.example.appcopa.TBancoDados.database.DML;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.appcopa.ConexaoSqlite;
+import com.example.appcopa.TBancoDados.database.DDL.LinguaDDL;
 
 public class LinguaDML {
 
