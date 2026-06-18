@@ -54,7 +54,7 @@ public class GrupoSelecaoModel {
 
         int idxId = cursor.getColumnIndexOrThrow(GrupoSelecaoDDL.COL_ID);
         int idxGrupo = cursor.getColumnIndexOrThrow(GrupoSelecaoDDL.COL_ID_GRUPO);
-        int idxSelecao = cursor.getColumnIndexOrThrow(GrupoSelecaoDDL.COL_ID_SELECAO);
+        int idxSelecao = cursor.getColumnIndexOrThrow(GrupoSelecaoDDL.COL_CODIGO_SELECAO);
 
         grupoSelecao.setId(cursor.getInt(idxId));
         grupoSelecao.setIdGrupo(cursor.getInt(idxGrupo));
