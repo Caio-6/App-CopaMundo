@@ -20,16 +20,4 @@ public enum CodigoLinguaEnum {
         return codLingua;
     }
 
-    public static CodigoLinguaEnum procLingua(String cod)
-    {
-        for(CodigoLinguaEnum lingua:values())
-        {
-            if(lingua.getCodLingua().equals(cod))
-            {
-                return lingua;
-            }
-        }
-        throw new IllegalArgumentException("Lingua não mapeada: " + cod);
-    }
-
 }

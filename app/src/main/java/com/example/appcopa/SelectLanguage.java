@@ -42,7 +42,7 @@ public class SelectLanguage extends AppCompatActivity {
         if(!cod.isBlank())
         {
             //Configuração do banco de dados
-            banco_dados.SalvarLingua(codLingua.toString());
+            banco_dados.SalvarLingua(cod);
 
             Toast.makeText(this,"Lingua salva no banco",Toast.LENGTH_SHORT).show();
             //Start de Intent
