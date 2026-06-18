@@ -10,6 +10,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appcopa.TBancoDados.model.ConfiguracaoModel;
+import com.example.appcopa.TBancoDados.util.CodigoLinguaEnum;
 
 
 public class SelectLanguage extends AppCompatActivity {
@@ -20,22 +21,36 @@ public class SelectLanguage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_select_language);
-        Button btnPortugues=findViewById(R.id.portugues);
-        Intent intent=new Intent(SelectLanguage.this,GrupoSelecao.class);
-        btnPortugues.setOnClickListener(new View.OnClickListener() {
+
+        configBotao(R.id.portugues,CodigoLinguaEnum.PORTUGUES_BR);
+        configBotao(R.id.english,CodigoLinguaEnum.INGLES);
+    }
+
+    private void configBotao(int idBtn, final CodigoLinguaEnum linguaEnum)
+    {
+        Button btn=findViewById(idBtn);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String codLingua="pt";
-                processLingua(codLingua);
-                startActivity(intent);
-                finish();
+                processLingua(linguaEnum);
             }
         });
     }
-
-    public void processLingua(String codLingua)
+    private void processLingua(CodigoLinguaEnum codLingua)
     {
-        banco_dados.SalvarLingua(codLingua);
-        Toast.makeText(this,"Lingua salva no banco!",Toast.LENGTH_SHORT).show();
+        String cod=codLingua.getCodLingua();
+        if(!cod.isBlank())
+        {
+            //Configuração do banco de dados
+            banco_dados.SalvarLingua(codLingua.toString());
+
+            Toast.makeText(this,"Lingua salva no banco",Toast.LENGTH_SHORT).show();
+            //Start de Intent
+            Intent intent = new Intent(this,GrupoSelecao.class);
+            startActivity(intent);
+            finish();
+        }else{
+            Toast.makeText(this,"Erro ao salvar lingua",Toast.LENGTH_SHORT).show();
+        }
     }
 }
