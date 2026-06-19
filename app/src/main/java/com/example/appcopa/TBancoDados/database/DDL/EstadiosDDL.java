@@ -1,0 +1,30 @@
+package com.example.appcopa.TBancoDados.database.DDL;
+
+public class EstadiosDDL {
+    public static final String TABELA_ESTADIOS = "Estadios";
+    public static final String COL_ID = "Id";
+    public static final String COL_CODIGO_ENUM = "Codigo_estadio_enum";
+    public static final String COL_NOME = "Nome";
+    public static final String COL_LOCAL = "Local";
+    public static final String COL_DESCRICAO = "Descricao";
+    public static final String COL_CAPACIDADE = "Capacidade";
+    public static final String COL_DATA_FUNDACAO = "data_fundacao"; // Alterado hífen para underline (boa prática)
+    public static final String COL_IMAGEM = "imagem";
+    public static final String COL_LINK_MAPS = "link_maps"; // Alterado hífen para underline
+    
+    public static final String SCRIPT_CRIACAO = "CREATE TABLE IF NOT EXISTS " + TABELA_ESTADIOS + " ("
+            + COL_ID + " INTEGER NOT NULL UNIQUE, "
+            + COL_CODIGO_ENUM + " INTEGER NOT NULL UNIQUE, "
+            + COL_NOME + " TEXT NOT NULL, "
+            + COL_LOCAL + " TEXT NOT NULL, "
+            + COL_DESCRICAO + " TEXT NOT NULL, "
+            + COL_CAPACIDADE + " INTEGER NOT NULL, "
+            + COL_DATA_FUNDACAO + " TEXT NOT NULL, "
+            + COL_IMAGEM + " BLOB NOT NULL UNIQUE, "
+            + COL_LINK_MAPS + " TEXT NOT NULL, "
+            + "PRIMARY KEY(" + COL_ID + " AUTOINCREMENT)" // Define o Id como autoincremento
+            + ");";
+
+    public static final String SCRIPT_DELELTAR="DROP TABLE IF EXISTS " + TABELA_ESTADIOS;
+
+}
